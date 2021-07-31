@@ -1,9 +1,6 @@
 package storybuilder
 
 import (
-	"bufio"
-	"fmt"
-	"os"
 	"strings"
 )
 
