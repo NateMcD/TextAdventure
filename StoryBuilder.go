@@ -1,12 +1,8 @@
 package storybuilder
 
-import (
-	"strings"
-)
-
 type storyNode struct {
 	text	string
-	choices *choice
+	choices *choices
 }
 
 type choices struct {
