@@ -1,8 +1,23 @@
 package storybuilder
 
 import (
+	"bufio"
+	"fmt"
+	"os"
 	"strings"
 )
+
+type storyNode struct {
+	text	string
+	choices *choice
+}
+
+type choices struct {
+	cmd				string
+	description		string
+	nextNode		*storyNode
+	nextChoice		*choices
+}
 
 func (node *storyNode) addChoice(cmd string, description string, nextNode *storyNode) {
 	choice := &choices{cmd, description, nextNode, nil}
