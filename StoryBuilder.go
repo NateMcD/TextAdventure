@@ -1,6 +1,6 @@
 package storybuilder
 
-impot "math/rand"
+import "math/rand"
 
 func GetRoom() string {
 	rooms := [3]string{"Escape", "Ogre", "Trap", "DarkRoom"}
