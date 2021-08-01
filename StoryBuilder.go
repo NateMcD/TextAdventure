@@ -1,6 +1,9 @@
 package storybuilder
 
-import "math/rand"
+import (
+	"math/rand"
+	"time"
+)
 
 func GetRoom() string {
 	rooms := [4]string{
@@ -9,6 +12,7 @@ func GetRoom() string {
 		"DEATH! You encounter a trap, instant death!",
 		"You find yourself in a dark room, not sure of your surroundings.",
 	}
+	rand.Seed(time.Now().UnixNano())
 	randomIndex := rand.Intn(len(rooms))
 	chosenRoom := rooms[randomIndex]
 	return chosenRoom
