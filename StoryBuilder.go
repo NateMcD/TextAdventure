@@ -1,23 +1,23 @@
 package storybuilder
 
-type storyNode struct {
+type StoryNode struct {
 	text	string
-	choices *choices
+	Choices *Choices
 }
 
-type choices struct {
+type Choices struct {
 	cmd				string
 	description		string
-	nextNode		*storyNode
-	nextChoice		*choices
+	nextNode		*StoryNode
+	nextChoice		*Choices
 }
 
-func (node *storyNode) addChoice(cmd string, description string, nextNode *storyNode) {
-	choice := &choices{cmd, description, nextNode, nil}
-	if node.choices == nil {
-		node.choices = choice
+func (node *StoryNode) addChoice(cmd string, description string, nextNode *StoryNode) {
+	choice := &Choices{cmd, description, nextNode, nil}
+	if node.Choices == nil {
+		node.Choices = choice
 	} else {
-		currentChoice := node.choices
+		currentChoice := node.Choices
 		for currentChoice.nextChoice != nil {
 			currentChoice = currentChoice.nextChoice
 		}
